@@ -52,3 +52,14 @@ the Google route is not automatically classified into sidewalks and streets.
 The Python server currently runs locally; saving a key in Supabase does not
 connect this server to Supabase or deploy it. Native iPhone build verification
 and production hosting are still outstanding.
+
+## Sidewalk planner redesign
+
+`/experimental.html` now shares the Google Maps layout and address autocomplete
+with the main planner. `/api/sidewalk-trip` checks mapped access candidates within
+500 m and tries connected candidate pairs in order of combined approach distance.
+The first usable sidewalk route is a suggestion between mapped points, not a
+verified door-to-door route. Endpoint approaches are disclosed and never drawn
+as invented route segments. Street alternatives require an explicit choice.
+This simplifies access selection but does not add sidewalk coverage or implement
+independent street-gap combinations.

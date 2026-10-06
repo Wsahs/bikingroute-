@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#142c24"><title>Sidepath — A better way to ride</title><link rel="stylesheet" href="website.css"></head>
 <body>
-<header><a class="brand" href="/" aria-label="Sidepath home"><span class="brand-icon">↗</span>sidepath<span class="brand-period">.</span></a><nav aria-label="Main navigation"><span class="active">Route planner</span><a href="/experimental.html">Sidewalk lab <small>BETA</small></a></nav><span class="header-note"><i></i>Powered by Google Maps</span></header>
+<header><a class="brand" href="/" aria-label="Sidepath home"><span class="brand-icon">↗</span>sidepath<span class="brand-period">.</span></a><nav aria-label="Main navigation"><span class="active">Route planner</span><a href="/experimental.html">Sidewalks &amp; trails <small>BETA</small></a></nav><span class="header-note"><i></i>Powered by Google Maps</span></header>
 <main><aside class="planner">
 <div class="intro"><span class="eyebrow">LESS TRAFFIC. MORE FREEDOM.</span><h1>Your next ride <br>starts here<span>.</span></h1><p>Across town or off the beaten path. <br>Find your way on two wheels.</p></div>
 <form id="trip-form">
@@ -9,7 +9,7 @@
 <div class="locations"><div class="field"><label for="start">Starting point</label><span class="location-dot start-dot"></span><input id="start" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="start-results" placeholder="Address or place"><div id="start-results" class="suggestions" role="listbox" hidden></div></div><div class="connection"></div><div class="field"><label for="end">Destination</label><span class="location-dot end-dot"></span><input id="end" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="end-results" placeholder="Where to?"><div id="end-results" class="suggestions" role="listbox" hidden></div></div></div>
 <div class="ride-mode"><span class="bike-icon" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5" cy="16" r="4"/><circle cx="19" cy="16" r="4"/><path d="m5 16 5-9 5 9H5m5-9h6l3 9M8 4h4m3 0h3l1 3"/></svg></span><div><strong>Cycling</strong><span>Google’s bicycle-friendly routes</span></div><span class="mode-check">✓</span></div>
 <button class="primary" id="find" type="submit" disabled>Find my route <span>↗</span></button>
-<p class="route-disclosure">Cycling routes may include streets. Sidewalk-only routing is available in the <a href="/experimental.html">experimental lab</a>.</p>
+<p class="route-disclosure">Cycling routes may include streets. Explore mapped off-road options in <a href="/experimental.html">Sidewalks &amp; trails</a>.</p>
 </form>
 <section class="results" aria-live="polite"><p id="status" class="status">Loading Google Maps…</p><div id="route-options"></div><div id="route-details" hidden><div class="details-heading"><h2>Your directions</h2><button type="button" id="fit">Fit route ↗</button></div><ol id="directions"></ol><a id="open-google" class="open-google" target="_blank" rel="noopener noreferrer">Continue in Google Maps ↗</a><p id="warnings" class="route-disclosure"></p></div></section>
 <div class="sidebar-footer"><span class="mini-mark">↗</span><p>A little adventure.<br>A better everyday ride.</p><span class="footer-label">SIDEPATH / 2026</span></div>

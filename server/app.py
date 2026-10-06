@@ -52,6 +52,11 @@ class Application:
    if mode not in ('sidewalk','bicycle'):raise ValueError('Unknown mode')
    def allowed(edge):return eligible(dict(edge,quiet_verified=True) if mode=='bicycle' and edge.get('kind')=='street' else edge)
    if path=='/api/status':return 200,{'coverage':g['metadata'] if g else {'coverage_complete':False,'available':False},'regions':[{'id':k,'available':self.graph is not None or bool(self.data_dir and (self.data_dir/(k+'-network.json')).exists())} for k in ['boca','hollywood']]}
+   if path=='/api/sidewalk-trip' and method=='POST':
+    from server.sidewalk_trip import trip,coordinates
+    origin=coordinates(payload.get('origin'));destination=coordinates(payload.get('destination'))
+    if not g:return 503,{'error':'Sidewalk mapping is not available for this area yet. Google cycling routes are still available.'}
+    return 200,self.with_directions(trip(g,origin,destination),dataset)
    if path=='/api/route' and method=='POST':
     if any(not isinstance(payload.get(k),str) or not payload[k] for k in ['start','end']):raise ValueError('Select mapped access points')
     speed=payload.get('speed_mph',10)
