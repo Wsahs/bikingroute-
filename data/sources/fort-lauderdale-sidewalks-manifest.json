@@ -1,0 +1,37 @@
+{
+  "source": "https://gis.fortlauderdale.gov/server/rest/services/DBLocalGov/SidewalkNetwork/MapServer/0",
+  "requested_bbox_wsen": [
+    -80.2,
+    26.07,
+    -80.09,
+    26.2
+  ],
+  "retrieved_at": "2026-09-30T22:24:51.561685+00:00",
+  "feature_count": 17348,
+  "all_advertised_ids_downloaded": true,
+  "coverage_complete": false,
+  "routing_verified": false,
+  "source_editing_info": null,
+  "source_attribution": "",
+  "sha256": "9bc6ef6dd066d99fe67fc60c78fae0b97e077c4c6d5841915647e7a8893c1451",
+  "file": "fort-lauderdale-sidewalks.geojson",
+  "category_counts": {
+    "STATUS": {
+      "Existing Sidewalk": 9609,
+      "Future Project": 6907,
+      "Current Project": 832
+    }
+  },
+  "limitations": [
+    "Full layer download is not proof of complete real-world coverage.",
+    "Existing/proposed status must be checked before routing.",
+    "Independent GIS lines do not establish connected sidewalk topology or bicycle permission.",
+    "Reuse terms and currency must be reviewed before production distribution."
+  ],
+  "geometry_types": {
+    "LineString": 17345,
+    "MultiLineString": 3
+  },
+  "missing_geometry": 0,
+  "validation": "IDs unique; expected count, checksum and longitude/latitude verified"
+}

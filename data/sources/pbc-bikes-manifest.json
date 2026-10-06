@@ -1,0 +1,50 @@
+{
+  "source": "https://services5.arcgis.com/79IoFXBn9ZeqmVlC/ArcGIS/rest/services/Bicycle_Facility/FeatureServer/0",
+  "requested_bbox_wsen": [
+    -80.2,
+    26.32,
+    -80.055,
+    26.43
+  ],
+  "retrieved_at": "2026-09-30T22:24:23.206742+00:00",
+  "feature_count": 148,
+  "all_advertised_ids_downloaded": true,
+  "coverage_complete": false,
+  "routing_verified": false,
+  "source_editing_info": {
+    "lastEditDate": 1787598369452,
+    "schemaLastEditDate": 1787598369452,
+    "dataLastEditDate": 1787598369452
+  },
+  "source_attribution": "This layer was compiled by the Palm Beach Transportation Planning Agency. However, this product is for reference purposes only and is not to be construed as a legal document or survey instrument. Any reliance on the information contained herein is at the user's own risk. Palm Beach Transportation Planning Agency assumes no responsibility for any use of the information contained herein or any loss resulting therefrom.",
+  "sha256": "d8d0802119a1a7e1bf484e4c3746dc42b7ddca297f519c7ab92c7674e2d282df",
+  "file": "pbc-bikes.geojson",
+  "category_counts": {
+    "facility_existing": {
+      "No Facility": 82,
+      "Paved Shoulder": 14,
+      "Sharrow": 7,
+      "Designated": 42,
+      "Buffered": 2,
+      "Separated": 1
+    },
+    "facility_suitability": {
+      "Fair": 105,
+      "Good": 10,
+      "Caution": 29,
+      "None": 4
+    }
+  },
+  "limitations": [
+    "Full layer download is not proof of complete real-world coverage.",
+    "Existing/proposed status must be checked before routing.",
+    "Independent GIS lines do not establish connected sidewalk topology or bicycle permission.",
+    "Reuse terms and currency must be reviewed before production distribution."
+  ],
+  "geometry_types": {
+    "LineString": 147,
+    "MultiLineString": 1
+  },
+  "missing_geometry": 0,
+  "validation": "IDs unique; expected count, checksum and longitude/latitude verified"
+}

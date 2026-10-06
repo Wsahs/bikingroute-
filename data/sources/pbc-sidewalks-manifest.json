@@ -1,0 +1,38 @@
+{
+  "source": "https://pbcmaps.pbcgov.org/arcgis/rest/services/Ags/2/MapServer/15",
+  "requested_bbox_wsen": [
+    -80.2,
+    26.32,
+    -80.055,
+    26.43
+  ],
+  "retrieved_at": "2026-09-30T22:27:15.909188+00:00",
+  "feature_count": 137951,
+  "all_advertised_ids_downloaded": true,
+  "coverage_complete": false,
+  "routing_verified": false,
+  "source_editing_info": null,
+  "source_attribution": "",
+  "sha256": "49f906cff9349e8dc5e606e9534cf01d03d1697f974dc46bd9778fad1a87a7f9",
+  "file": "pbc-sidewalks.geojson",
+  "category_counts": {
+    "TYPE": {
+      "DRIVEWAY": 62441,
+      "SIDEWALK": 57570,
+      "ASPHALT": 326,
+      "CONCRETE": 17603,
+      "CURBED DRIVEWAY": 11
+    }
+  },
+  "limitations": [
+    "Full layer download is not proof of complete real-world coverage.",
+    "Existing/proposed status must be checked before routing.",
+    "Independent GIS lines do not establish connected sidewalk topology or bicycle permission.",
+    "Reuse terms and currency must be reviewed before production distribution."
+  ],
+  "geometry_types": {
+    "LineString": 137951
+  },
+  "missing_geometry": 0,
+  "validation": "IDs unique; expected count, checksum and longitude/latitude verified"
+}

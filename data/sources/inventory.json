@@ -1,0 +1,364 @@
+{
+  "generated_at": "2026-10-01T16:45:17.624340+00:00",
+  "datasets": [
+    {
+      "source": "https://gis.fortlauderdale.gov/server/rest/services/DBLocalGov/SidewalkNetwork/MapServer/0",
+      "requested_bbox_wsen": [
+        -80.2,
+        26.07,
+        -80.09,
+        26.2
+      ],
+      "retrieved_at": "2026-09-30T22:24:51.561685+00:00",
+      "feature_count": 17348,
+      "all_advertised_ids_downloaded": true,
+      "coverage_complete": false,
+      "routing_verified": false,
+      "source_editing_info": null,
+      "source_attribution": "",
+      "sha256": "9bc6ef6dd066d99fe67fc60c78fae0b97e077c4c6d5841915647e7a8893c1451",
+      "file": "fort-lauderdale-sidewalks.geojson",
+      "category_counts": {
+        "STATUS": {
+          "Existing Sidewalk": 9609,
+          "Future Project": 6907,
+          "Current Project": 832
+        }
+      },
+      "limitations": [
+        "Full layer download is not proof of complete real-world coverage.",
+        "Existing/proposed status must be checked before routing.",
+        "Independent GIS lines do not establish connected sidewalk topology or bicycle permission.",
+        "Reuse terms and currency must be reviewed before production distribution."
+      ],
+      "geometry_types": {
+        "LineString": 17345,
+        "MultiLineString": 3
+      },
+      "missing_geometry": 0,
+      "validation": "IDs unique; expected count, checksum and longitude/latitude verified"
+    },
+    {
+      "source": "https://services5.arcgis.com/79IoFXBn9ZeqmVlC/ArcGIS/rest/services/Bicycle_Facility/FeatureServer/0",
+      "requested_bbox_wsen": [
+        -80.2,
+        26.32,
+        -80.055,
+        26.43
+      ],
+      "retrieved_at": "2026-09-30T22:24:23.206742+00:00",
+      "feature_count": 148,
+      "all_advertised_ids_downloaded": true,
+      "coverage_complete": false,
+      "routing_verified": false,
+      "source_editing_info": {
+        "lastEditDate": 1787598369452,
+        "schemaLastEditDate": 1787598369452,
+        "dataLastEditDate": 1787598369452
+      },
+      "source_attribution": "This layer was compiled by the Palm Beach Transportation Planning Agency. However, this product is for reference purposes only and is not to be construed as a legal document or survey instrument. Any reliance on the information contained herein is at the user's own risk. Palm Beach Transportation Planning Agency assumes no responsibility for any use of the information contained herein or any loss resulting therefrom.",
+      "sha256": "d8d0802119a1a7e1bf484e4c3746dc42b7ddca297f519c7ab92c7674e2d282df",
+      "file": "pbc-bikes.geojson",
+      "category_counts": {
+        "facility_existing": {
+          "No Facility": 82,
+          "Paved Shoulder": 14,
+          "Sharrow": 7,
+          "Designated": 42,
+          "Buffered": 2,
+          "Separated": 1
+        },
+        "facility_suitability": {
+          "Fair": 105,
+          "Good": 10,
+          "Caution": 29,
+          "None": 4
+        }
+      },
+      "limitations": [
+        "Full layer download is not proof of complete real-world coverage.",
+        "Existing/proposed status must be checked before routing.",
+        "Independent GIS lines do not establish connected sidewalk topology or bicycle permission.",
+        "Reuse terms and currency must be reviewed before production distribution."
+      ],
+      "geometry_types": {
+        "LineString": 147,
+        "MultiLineString": 1
+      },
+      "missing_geometry": 0,
+      "validation": "IDs unique; expected count, checksum and longitude/latitude verified"
+    },
+    {
+      "source": "https://services5.arcgis.com/79IoFXBn9ZeqmVlC/ArcGIS/rest/services/Pedestrian_Facilities/FeatureServer/0",
+      "requested_bbox_wsen": [
+        -80.245,
+        26.32,
+        -80.055,
+        26.43
+      ],
+      "retrieved_at": "2026-10-01T00:44:26.539175+00:00",
+      "feature_count": 9283,
+      "all_advertised_ids_downloaded": true,
+      "coverage_complete": false,
+      "routing_verified": false,
+      "source_editing_info": {
+        "lastEditDate": 1790615542887,
+        "schemaLastEditDate": 1790615542887,
+        "dataLastEditDate": 1790615542887
+      },
+      "source_attribution": "",
+      "sha256": "4ce7adf1d41bff0fdc8b68070479a7bbb8036fbea74c3352b54e68ca4d9ed2c8",
+      "file": "pbc-pedestrians.geojson",
+      "category_counts": {
+        "Existing_T": {
+          "Sidewalk": 1916,
+          "Pathway": 418,
+          "Shared Use Path": 243,
+          "Crosswalk - Ladder": 285,
+          "Crosswalk - Unmarked": 328,
+          "None": 5272,
+          "Crosswalk - Standard": 571,
+          "Crosswalk - Solid": 53,
+          "Crosswalk - Ladder\r\n": 1,
+          "Crosswalk - Special Emphasis": 196
+        },
+        "Proposed_T": {
+          "Sidewalk": 2225,
+          "Shared Use Path": 290,
+          "Crosswalk - Ladder": 415,
+          "Crosswalk - Unmarked": 325,
+          "None": 5402,
+          "Crosswalk - Standard": 562,
+          "Crosswalk - Solid": 51,
+          "Pathway": 12,
+          " ": 1
+        }
+      },
+      "limitations": [
+        "Full layer download is not proof of complete real-world coverage.",
+        "Existing/proposed status must be checked before routing.",
+        "Independent GIS lines do not establish connected sidewalk topology or bicycle permission.",
+        "Reuse terms and currency must be reviewed before production distribution."
+      ]
+    },
+    {
+      "source": "https://pbcmaps.pbcgov.org/arcgis/rest/services/OpenData/Transportation_Open_Data/MapServer/3",
+      "requested_bbox_wsen": [
+        -80.245,
+        26.32,
+        -80.055,
+        26.43
+      ],
+      "retrieved_at": "2026-10-01T16:36:51.525886+00:00",
+      "feature_count": 9873,
+      "all_advertised_ids_downloaded": true,
+      "coverage_complete": false,
+      "routing_verified": false,
+      "source_editing_info": null,
+      "source_attribution": "Palm Beach County Engineering and Public Works, Geoprocessing Section",
+      "sha256": "c4bd18e208dc9a9d7102d886e5410e120d58ee3c2d653743e4c096aae989af75",
+      "file": "pbc-roads.geojson",
+      "category_counts": {
+        "TYPE": {
+          "Dr": 1817,
+          "Way": 787,
+          "Ct": 514,
+          "Cir": 810,
+          "Trl": 169,
+          "Walk": 11,
+          "Ter": 337,
+          "Blvd": 669,
+          "Hwy": 136,
+          "Rd": 789,
+          "Pt": 2,
+          "None": 571,
+          "St": 1193,
+          "Ave": 960,
+          "Ln": 665,
+          "Pl": 278,
+          "Cv": 3,
+          "Aly": 1,
+          "Vis": 2,
+          "Pkwy": 50,
+          "Rdg": 1,
+          "Vw": 11,
+          "Bnd": 17,
+          "Mnr": 10,
+          "Tpke": 26,
+          "Cres": 4,
+          "Run": 15,
+          "Oval": 14,
+          "Path": 2,
+          "Grn": 2,
+          "Pne": 1,
+          "Trce": 4,
+          "Loop": 2
+        },
+        "L_MUNI": {
+          "BOCA RATON": 4237,
+          "DELRAY BEACH": 237,
+          "UNINCORPORATED": 5373,
+          "HIGHLAND BEACH": 26
+        },
+        "R_MUNI": {
+          "BOCA RATON": 4235,
+          "DELRAY BEACH": 235,
+          "UNINCORPORATED": 5377,
+          "HIGHLAND BEACH": 26
+        }
+      },
+      "limitations": [
+        "Full layer download is not proof of complete real-world coverage.",
+        "Existing/proposed status must be checked before routing.",
+        "Independent GIS lines do not establish connected sidewalk topology or bicycle permission.",
+        "Reuse terms and currency must be reviewed before production distribution."
+      ]
+    },
+    {
+      "source": "https://pbcmaps.pbcgov.org/arcgis/rest/services/Ags/2/MapServer/15",
+      "requested_bbox_wsen": [
+        -80.2,
+        26.32,
+        -80.055,
+        26.43
+      ],
+      "retrieved_at": "2026-09-30T22:27:15.909188+00:00",
+      "feature_count": 137951,
+      "all_advertised_ids_downloaded": true,
+      "coverage_complete": false,
+      "routing_verified": false,
+      "source_editing_info": null,
+      "source_attribution": "",
+      "sha256": "49f906cff9349e8dc5e606e9534cf01d03d1697f974dc46bd9778fad1a87a7f9",
+      "file": "pbc-sidewalks.geojson",
+      "category_counts": {
+        "TYPE": {
+          "DRIVEWAY": 62441,
+          "SIDEWALK": 57570,
+          "ASPHALT": 326,
+          "CONCRETE": 17603,
+          "CURBED DRIVEWAY": 11
+        }
+      },
+      "limitations": [
+        "Full layer download is not proof of complete real-world coverage.",
+        "Existing/proposed status must be checked before routing.",
+        "Independent GIS lines do not establish connected sidewalk topology or bicycle permission.",
+        "Reuse terms and currency must be reviewed before production distribution."
+      ],
+      "geometry_types": {
+        "LineString": 137951
+      },
+      "missing_geometry": 0,
+      "validation": "IDs unique; expected count, checksum and longitude/latitude verified"
+    }
+  ],
+  "existing_osm_pilot": {
+    "source_timestamp": "2026-09-30T20:22:42Z",
+    "highway_way_count": 28526,
+    "highway_counts": {
+      "residential": 5169,
+      "motorway_link": 144,
+      "service": 11112,
+      "tertiary": 684,
+      "unclassified": 283,
+      "secondary": 762,
+      "primary": 779,
+      "primary_link": 117,
+      "secondary_link": 72,
+      "tertiary_link": 40,
+      "busway": 21,
+      "motorway": 134,
+      "footway": 8608,
+      "track": 30,
+      "path": 293,
+      "cycleway": 219,
+      "pedestrian": 13,
+      "living_street": 4,
+      "steps": 34,
+      "raceway": 2,
+      "proposed": 6
+    },
+    "bounds_south_west_north_east": [
+      26.32,
+      -80.2,
+      26.43,
+      -80.055
+    ]
+  },
+  "uncollected": [
+    {
+      "region": "Miami-Dade",
+      "source": "https://gisweb.miamidade.gov/arcgis/rest/services/EAMS/EAMS_Map/MapServer/2",
+      "reason": "HTTPS certificate chain could not be validated; no features downloaded."
+    }
+  ],
+  "routing_status": "Boca OSM network expanded west. 3,176 existing county sidewalk/shared-use/crosswalk features imported by exact source-coordinate connectivity; cross-source joins, end-to-end access and complete regional coverage remain unverified.",
+  "hollywood_osm_pilot": {
+    "name": "Hollywood area pilot",
+    "coverage_complete": false,
+    "demo": false,
+    "bounds": [
+      25.97,
+      -80.26,
+      26.09,
+      -80.1
+    ],
+    "source_date": "2026-09-30T22:27:47Z",
+    "imported_at": "2026-09-30T22:29:15.106921+00:00",
+    "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+    "audit": {
+      "missing_node_segments": 0,
+      "roads_with_unseparated_sidewalks": 1521,
+      "input_ways": 36935,
+      "excluded_directed_segments": 278894,
+      "eligible_directed_segments": 2888
+    },
+    "limitations": [
+      "Pilot map only; not comprehensive county coverage.",
+      "Unknown bicycle permissions and conditional restrictions are excluded.",
+      "Street quietness has not been verified; live street fallback is unavailable until evidence is imported.",
+      "Road-tagged sidewalks are audited but cannot be routed without separate geometry and verified connections.",
+      "Mapped eligibility is not an on-site survey or a guarantee of current conditions."
+    ]
+  },
+  "address_imports": [
+    {
+      "source": "https://gis.pbcgov.org/arcgis/rest/services/CWGIS/SITUS_FULL_ADDRESS/FeatureServer/0",
+      "bounds": [
+        -80.3,
+        26.3,
+        -80.055,
+        26.46
+      ],
+      "retrieved_at": "2026-10-01T00:36:42.052275+00:00",
+      "advertised_count": 145785,
+      "downloaded_count": 145785,
+      "indexed_count": 145785,
+      "sha256": "283ce14ce4fdb67ec72e60db991a1f55361576a8068442b18665a404907ab86c",
+      "coverage_complete": false
+    },
+    {
+      "source": "https://services.arcgis.com/JMAJrTsHNLrSsWf5/ArcGIS/rest/services/ZoningApp/FeatureServer/0",
+      "bounds": [
+        -80.26,
+        25.97,
+        -80.1,
+        26.09
+      ],
+      "retrieved_at": "2026-10-01T00:38:52.302962+00:00",
+      "advertised_count": 139364,
+      "downloaded_count": 139364,
+      "indexed_count": 139364,
+      "sha256": "a3cf1e9a0b7c6d18f91ca47c536694f7aeef7ea26bc34a688ecdb02fbe325893",
+      "coverage_complete": false
+    }
+  ],
+  "latest_boca_audit": {
+    "missing_node_segments": 0,
+    "roads_with_unseparated_sidewalks": 375,
+    "input_ways": 34299,
+    "excluded_directed_segments": 302836,
+    "eligible_directed_segments": 149371
+  }
+}

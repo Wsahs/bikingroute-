@@ -1,0 +1,15 @@
+{
+  "source": "https://gis.pbcgov.org/arcgis/rest/services/CWGIS/SITUS_FULL_ADDRESS/FeatureServer/0",
+  "bounds": [
+    -80.3,
+    26.3,
+    -80.055,
+    26.46
+  ],
+  "retrieved_at": "2026-10-01T00:36:42.052275+00:00",
+  "advertised_count": 145785,
+  "downloaded_count": 145785,
+  "indexed_count": 145785,
+  "sha256": "283ce14ce4fdb67ec72e60db991a1f55361576a8068442b18665a404907ab86c",
+  "coverage_complete": false
+}

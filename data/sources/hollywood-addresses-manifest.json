@@ -1,0 +1,15 @@
+{
+  "source": "https://services.arcgis.com/JMAJrTsHNLrSsWf5/ArcGIS/rest/services/ZoningApp/FeatureServer/0",
+  "bounds": [
+    -80.26,
+    25.97,
+    -80.1,
+    26.09
+  ],
+  "retrieved_at": "2026-10-01T00:38:52.302962+00:00",
+  "advertised_count": 139364,
+  "downloaded_count": 139364,
+  "indexed_count": 139364,
+  "sha256": "a3cf1e9a0b7c6d18f91ca47c536694f7aeef7ea26bc34a688ecdb02fbe325893",
+  "coverage_complete": false
+}

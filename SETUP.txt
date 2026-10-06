@@ -1,0 +1,61 @@
+SIDEPATH BACKEND SETUP
+
+Current state
+- Existing app: Python routing API, browser UI, native SwiftUI source.
+- Google Maps Demo Key saved and verified in Supabase Edge Function Secrets as
+  GOOGLE_MAPS_API_KEY on 2026-10-05. Its value is never checked into source control.
+- Supabase: Judah's Project in Judahs Org, Free plan, West US (Oregon).
+  Project reference: fjoavsqklwionxxkqnlk
+  URL: https://fjoavsqklwionxxkqnlk.supabase.co
+- GitHub: https://github.com/Wsahs/bikingroute- (public).
+  Initial README committed on main: 64d608db54ebd1ac148339ec8b08efb6a7cb2d4a.
+- Supabase GitHub integration enabled and verified on 2026-10-05 with user
+  approval: production branch main, working directory ., automatic branching off.
+  App source and Supabase deployment configuration still need to be uploaded.
+- Codex Supabase connection currently sees the older Scanner account only.
+  Reconnect to Judahs Org before using Codex tools against this project.
+- Codex GitHub plugin connection is pending. Source publication status: see Git history and origin/main.
+- The local website now uses Google map rendering, Places search, and Routes
+  cycling directions through runtime configuration. It does not call Supabase.
+  Local Google integration is verified; production deployment remains pending.
+
+Recommended arrangement
+1. Use the existing Supabase project for database, optional rider accounts, and server
+   functions. Keep the Google server key in Edge Function Secrets.
+2. Browser maps require a separate website-restricted Google key. It is visible
+   to browsers by design; storing it in Supabase cannot make it a server secret.
+   Verify what the downloaded Demo Key supports before using it in either role.
+3. Use the existing GitHub repository for source code, tests, and schema migrations.
+   Exclude API keys, local env files, generated address inventories, and map caches.
+4. Host the current Python routing service separately or deliberately migrate it;
+   creating a Supabase project does not automatically host this Python service.
+5. Host the browser frontend on an HTTPS site. Native iPhone builds need Xcode,
+   Apple signing setup, and a physical-device/simulator test before distribution.
+
+Not yet solved by infrastructure
+- Complete address-to-path connectivity and sidewalk coverage.
+- Production quality navigation maneuvers and independent street-gap alternatives.
+- Data source attribution, refresh jobs, coverage checks, and deployment monitoring.
+
+Credentials
+Use the Supabase Dashboard's Edge Function Secrets or a local CLI env-file upload.
+Never paste the key into SQL, a public table, README, screenshot, or Git history.
+A successful setup must verify the secret is configured without returning its value.
+
+References
+https://supabase.com/docs/guides/functions/secrets
+https://developers.google.com/maps/documentation/javascript/demo-key
+https://developers.google.com/maps/api-security-best-practices
+
+WEBSITE UPDATE — 2026-10-05
+Default browser UI uses Google Maps and Google cycling routes. The original
+sidewalk prototype remains at /experimental.html. Server and browser keys
+load from environment variables or local .env (excluded from Git). The local
+preview uses the existing Demo Key; use separate restricted keys for production.
+
+GOOGLE AUTOCOMPLETE VERIFICATION
+Autocomplete now updates after each nonempty edit (250 ms debounce), with a
+Google session token and explicit Place Details lookup on selection. Selected
+coordinates use the correct Maps JavaScript lat/lng format. Stale selection
+responses are discarded after further editing or swapping. Alternatives are
+sorted by returned distance; no global shortest-path guarantee is made.

@@ -1,0 +1,25 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+!**/.env.example
+.secrets/
+*credentials*.json
+*api-key*
+*.p8
+*.pem
+supabase/.temp/
+# Generated map/address inventories (retained locally, not source code)
+data/*.sqlite*
+data/*-network.json
+data/*-source.osm.json
+data/sources/*.geojson
+# Runtime and build outputs
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+.DS_Store
+DerivedData/
+*.xcuserstate
+xcuserdata/

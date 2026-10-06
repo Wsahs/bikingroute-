@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-10-01T16:30:23.426252+00:00",
+  "imported_highway_ways": 34299,
+  "inventory_records": 34299,
+  "counts": {
+    "road_review": 22956,
+    "access_review": 2573,
+    "routable_mapped": 7316,
+    "crossing_review": 1454,
+    "driveway_continuations": 932
+  },
+  "individually_reviewed_crossings": [
+    "1151660139",
+    "1151660155",
+    "1152993381",
+    "1152993383"
+  ],
+  "imagery_source": "https://gis.pbcgov.org/image/rest/services/Aerialphotgraphy_2026_WebMercator/ImageServer",
+  "survey_complete": false,
+  "bounds": [
+    26.32,
+    -80.245,
+    26.43,
+    -80.055
+  ],
+  "notes": [
+    "Every imported highway way has a review record. This does not establish every real-world street or sidewalk is mapped.",
+    "Driveway continuations require shared-node topology, sidewalks at both ends, service-road-only crossing and reviewed jurisdiction.",
+    "Unmarked crossings of ordinary roads remain excluded from the strict route.",
+    "Private-access and explicit bicycle restrictions are retained."
+  ]
+}
