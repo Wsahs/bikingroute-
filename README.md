@@ -63,3 +63,19 @@ verified door-to-door route. Endpoint approaches are disclosed and never drawn
 as invented route segments. Street alternatives require an explicit choice.
 This simplifies access selection but does not add sidewalk coverage or implement
 independent street-gap combinations.
+
+## Boca connectivity update — October 6, 2026
+
+Refreshed all 9,283 advertised county pedestrian records in the Boca bounds.
+The importer now matches county `osm_id` to eligible unrestricted OSM ways and
+links endpoints only within one metre. Ambiguous matches are excluded. County
+Pathway features require an eligible matching OSM way before inclusion.
+The rebuild adds 789 cross-source connections and 87 pathway features, reducing
+eligible network components from 1,452 to 1,267. This is a topology improvement,
+not a field survey or a guarantee of complete coverage or address access.
+See `data/connectivity-update.json` for the measured counts.
+
+Both Google maps now handle trackpad Ctrl+wheel pinch and WebKit gesture events
+inside the map. Ordinary gestures remain handled by Google; page zoom outside
+the map remains available. Automated gesture tests run with
+`node --test web/tests/*.test.cjs`. Physical trackpad/iPhone testing is still needed.

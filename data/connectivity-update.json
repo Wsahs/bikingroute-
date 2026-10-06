@@ -1,0 +1,14 @@
+{
+  "before": {
+    "eligible_directed_segments": 151433,
+    "components": 1452
+  },
+  "after": {
+    "eligible_directed_segments": 153865,
+    "components": 1267
+  },
+  "source_links": 789,
+  "pathway_features_with_osm_evidence": 87,
+  "rule": "Shared county osm_id, eligible unrestricted OSM path, matching endpoint within 1 metre. No proximity-only connections.",
+  "coverage_complete": false
+}
