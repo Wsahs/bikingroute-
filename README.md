@@ -87,3 +87,9 @@ the map remains available. Automated gesture tests run with
 Documented lowered/flush/absent curbs no longer behave like locked gates. Unknown curbs, gates and explicit bicycle bans remain unresolved or blocked. Address lookup now considers temporary points on the interior of existing eligible map segments, preserving their direction, distance and topology. These points do not verify the approach from an address.
 
 `python -m server.audit_boca` inventories all 34,299 imported highway ways in the local review database, including exclusion reasons. This is a machine inventory, **not** a visual survey of every real sidewalk. The Boca area still contains missing geometry, unmarked crossings excluded by the strict policy, unknown barriers and unverified address approaches. Large detours remain possible. The county layer and raw OSM download are retained locally; private test addresses are not committed.
+
+### Optional unmarked crossings
+
+The sidewalk planner can now propose short mapped unmarked crossings of residential/service streets where sidewalk topology continues at both ends. These are **optional proposals**, never silently included in strict routes. The rider must accept each crossing separately; No excludes that crossing and recalculates. Gates, unknown curb barriers, explicit access restrictions, major-road crossings and unconnected geometry remain excluded. Aerial observations for nine reviewed locations are recorded in `data/crossing-imagery-review.json`; they do not establish legal access or current traffic conditions.
+
+The API accepts `crossing_choices` as an object mapping crossing IDs to boolean choices. `crossing_proposal` and `crossing_choices` are separate from the selected `primary` route. Red segments in a preview indicate crossings still requiring approval. Choices reset when the rider changes the trip. Address approaches and route times remain explicitly incomplete.

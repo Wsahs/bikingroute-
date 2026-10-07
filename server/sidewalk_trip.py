@@ -11,7 +11,7 @@ def coordinates(value):
   if isinstance(n,bool) or not isinstance(n,(int,float)) or not math.isfinite(n) or abs(n)>limit:raise ValueError('Invalid selected address coordinates.')
  return value
 
-def trip(graph,origin,destination):
+def _trip(graph,origin,destination):
  origin=coordinates(origin);destination=coordinates(destination)
  graph=with_path_access(graph,[origin,destination])
  result={'status':'coverage_gap','primary':None,'alternative':None,'requires_confirmation':False,'door_to_door_verified':False,'search_radius_m':500,'warnings':['Address-to-path connections are unverified. Distances and times cover only the mapped path.']}
@@ -32,3 +32,21 @@ def trip(graph,origin,destination):
  if fallback:return fallback
  result['message']='The mapped paths near these addresses do not form a usable continuous route in the requested direction. Coverage is incomplete; we have not ruled out a real sidewalk route.'
  return result
+
+
+def trip(graph,origin,destination,crossing_choices=None):
+ from server.crossing_options import apply_options
+ choices={} if crossing_choices is None else crossing_choices
+ selected=_trip(apply_options(graph,choices),origin,destination)
+ preview=_trip(apply_options(graph,choices,preview=True),origin,destination) if any(e.get('crossing_option') and choices.get(e['crossing_option']['id']) is None for e in graph['edges']) else selected
+ candidate=preview.get('primary')
+ pending={s['crossing_option']['id']:s['crossing_option'] for s in (candidate or {}).get('segments',[]) if s.get('crossing_option') and s.get('approval_required')}
+ current=selected.get('primary')
+ if pending and (not current or candidate['distance_m']+1<current['distance_m']):
+  selected['crossing_proposal']=candidate
+  selected['crossing_choices']=list(pending.values())
+  selected['proposal_approaches']=preview['approaches']
+  selected['proposal_message']='Optional mapped route with unmarked side-street crossings. Approve each crossing separately before selecting it. Address approaches remain unverified.'
+ if any(s.get('crossing_option') for s in (current or {}).get('segments',[])):
+  selected['warnings'].append('Includes individually approved unmarked crossings. Traffic conditions and current accessibility have not been verified.')
+ return selected

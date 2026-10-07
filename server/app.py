@@ -32,7 +32,7 @@ class Application:
    with self.lock:
     source=self.data_dir/'sources/pbc-roads.geojson'
     if self.road_names is None and source.exists():self.road_names=RoadNames(json.loads(source.read_text())['features'])
-  for key in ('primary','alternative'):
+  for key in ('primary','alternative','crossing_proposal'):
    if result.get(key):result[key]['directions']=directions(result[key]['segments'],self.road_names if dataset=='boca' else None)
   return result
  def dispatch(self,method,path,payload=None):
@@ -56,7 +56,7 @@ class Application:
     from server.sidewalk_trip import trip,coordinates
     origin=coordinates(payload.get('origin'));destination=coordinates(payload.get('destination'))
     if not g:return 503,{'error':'Sidewalk mapping is not available for this area yet. Google cycling routes are still available.'}
-    return 200,self.with_directions(trip(g,origin,destination),dataset)
+    return 200,self.with_directions(trip(g,origin,destination,payload.get('crossing_choices')),dataset)
    if path=='/api/route' and method=='POST':
     if any(not isinstance(payload.get(k),str) or not payload[k] for k in ['start','end']):raise ValueError('Select mapped access points')
     speed=payload.get('speed_mph',10)

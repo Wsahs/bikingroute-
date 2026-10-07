@@ -6,12 +6,18 @@ from server.jurisdictions import boca_policy
 from server.gis_network import merge_pedestrians
 from server.routing import eligible
 from server.county_evidence import supplement
+from server.crossing_options import catalog
 
 def rebuild(folder=Path('data')):
  policy=boca_policy(folder/'sources/pbc-municipalities.geojson')
  features=json.loads((folder/'sources/pbc-pedestrians.geojson').read_text())['features']
  document,evidence=supplement(json.loads((folder/'boca-source.osm.json').read_text()),features)
  graph=convert(document,bounds=[26.32,-80.245,26.43,-80.055],sidewalk_policy=policy)
+ options=catalog(document,policy)
+ for edge in graph['edges']:
+  option=options.get(edge['id'].split(':')[0])
+  if option and edge['kind']=='crossing' and not edge['designated'] and edge['bicycle_allowed'] and edge['assessed']:edge['crossing_option']=option
+ graph['metadata']['optional_unmarked_crossings']=len({e['crossing_option']['id'] for e in graph['edges'] if e.get('crossing_option')})
  graph['metadata']['county_supplement']=evidence
  (folder/'county-evidence-audit.json').write_text(json.dumps(evidence,indent=2))
  source=folder/'sources/pbc-pedestrians.geojson';manifest=json.loads((folder/'sources/pbc-pedestrians-manifest.json').read_text())

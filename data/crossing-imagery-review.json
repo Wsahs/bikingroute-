@@ -1,0 +1,242 @@
+{
+  "review_date": "2026-10-07",
+  "imagery_source": "Palm Beach County 2026 aerial imagery",
+  "coverage_complete": false,
+  "records": [
+    {
+      "osm_way_id": "1151999180",
+      "imagery_url": "https://gis.pbcgov.org/image/rest/services/Aerialphotgraphy_2026_WebMercator/ImageServer/exportImage?bbox=-8930923.67364551%2C3043233.355149658%2C-8930813.67364551%2C3043343.355149658&bboxSR=3857&imageSR=3857&size=700%2C700&format=jpg&f=image",
+      "geometry": [
+        [
+          -80.2273719,
+          26.356436
+        ],
+        [
+          -80.2273605,
+          26.3563948
+        ],
+        [
+          -80.2273425,
+          26.3563297
+        ]
+      ],
+      "tags": {
+        "crossing": "unmarked",
+        "crossing:markings": "no",
+        "footway": "crossing",
+        "highway": "footway"
+      },
+      "observation": "Sidewalk approaches are visible at the side-street entrance. No continuous painted pedestrian crossing is apparent; portions are obscured by shadows or vegetation. This is not a traffic-safety or legal-access determination."
+    },
+    {
+      "osm_way_id": "1151999190",
+      "imagery_url": "https://gis.pbcgov.org/image/rest/services/Aerialphotgraphy_2026_WebMercator/ImageServer/exportImage?bbox=-8930886.956766797%2C3043008.2953647035%2C-8930776.956766797%2C3043118.2953647035&bboxSR=3857&imageSR=3857&size=700%2C700&format=jpg&f=image",
+      "geometry": [
+        [
+          -80.2270222,
+          26.3545342
+        ],
+        [
+          -80.2270294,
+          26.354579
+        ],
+        [
+          -80.2270338,
+          26.3546125
+        ]
+      ],
+      "tags": {
+        "crossing": "unmarked",
+        "crossing:markings": "no",
+        "footway": "crossing",
+        "highway": "footway"
+      },
+      "observation": "Sidewalk approaches are visible at the side-street entrance. No continuous painted pedestrian crossing is apparent; portions are obscured by shadows or vegetation. This is not a traffic-safety or legal-access determination."
+    },
+    {
+      "osm_way_id": "1151999188",
+      "imagery_url": "https://gis.pbcgov.org/image/rest/services/Aerialphotgraphy_2026_WebMercator/ImageServer/exportImage?bbox=-8930881.535507593%2C3042784.539375881%2C-8930771.535507593%2C3042894.539375881&bboxSR=3857&imageSR=3857&size=700%2C700&format=jpg&f=image",
+      "geometry": [
+        [
+          -80.2269779,
+          26.3527369
+        ],
+        [
+          -80.2269807,
+          26.3527686
+        ],
+        [
+          -80.2269807,
+          26.3528168
+        ]
+      ],
+      "tags": {
+        "crossing": "unmarked",
+        "crossing:markings": "no",
+        "footway": "crossing",
+        "highway": "footway"
+      },
+      "observation": "Sidewalk approaches are visible at the side-street entrance. No continuous painted pedestrian crossing is apparent; portions are obscured by shadows or vegetation. This is not a traffic-safety or legal-access determination."
+    },
+    {
+      "osm_way_id": "1152179098",
+      "imagery_url": "https://gis.pbcgov.org/image/rest/services/Aerialphotgraphy_2026_WebMercator/ImageServer/exportImage?bbox=-8929578.470365517%2C3042318.871905842%2C-8929468.470365517%2C3042428.871905842&bboxSR=3857&imageSR=3857&size=700%2C700&format=jpg&f=image",
+      "geometry": [
+        [
+          -80.2152183,
+          26.3490268
+        ],
+        [
+          -80.2152664,
+          26.3490307
+        ],
+        [
+          -80.2153377,
+          26.3490193
+        ]
+      ],
+      "tags": {
+        "crossing": "unmarked",
+        "crossing:markings": "no",
+        "footway": "crossing",
+        "highway": "footway"
+      },
+      "observation": "Sidewalk approaches are visible at the side-street entrance. No continuous painted pedestrian crossing is apparent; portions are obscured by shadows or vegetation. This is not a traffic-safety or legal-access determination."
+    },
+    {
+      "osm_way_id": "1152222355",
+      "imagery_url": "https://gis.pbcgov.org/image/rest/services/Aerialphotgraphy_2026_WebMercator/ImageServer/exportImage?bbox=-8928413.508183714%2C3042363.5435262914%2C-8928303.508183714%2C3042473.5435262914&bboxSR=3857&imageSR=3857&size=700%2C700&format=jpg&f=image",
+      "geometry": [
+        [
+          -80.204842,
+          26.3493839
+        ],
+        [
+          -80.2048087,
+          26.3493852
+        ],
+        [
+          -80.2047766,
+          26.3493865
+        ]
+      ],
+      "tags": {
+        "crossing": "unmarked",
+        "crossing:markings": "no",
+        "footway": "crossing",
+        "highway": "footway"
+      },
+      "observation": "Sidewalk approaches are visible at the side-street entrance. No continuous painted pedestrian crossing is apparent; portions are obscured by shadows or vegetation. This is not a traffic-safety or legal-access determination."
+    },
+    {
+      "osm_way_id": "1152246848",
+      "imagery_url": "https://gis.pbcgov.org/image/rest/services/Aerialphotgraphy_2026_WebMercator/ImageServer/exportImage?bbox=-8927997.919128735%2C3042410.923422314%2C-8927887.919128735%2C3042520.923422314&bboxSR=3857&imageSR=3857&size=700%2C700&format=jpg&f=image",
+      "geometry": [
+        [
+          -80.2011336,
+          26.3497759
+        ],
+        [
+          -80.2010603,
+          26.3497641
+        ],
+        [
+          -80.2010335,
+          26.3497598
+        ]
+      ],
+      "tags": {
+        "crossing": "unmarked",
+        "crossing:markings": "no",
+        "crossing:signals": "no",
+        "footway": "crossing",
+        "highway": "footway"
+      },
+      "observation": "Sidewalk approaches are visible at the side-street entrance. No continuous painted pedestrian crossing is apparent; portions are obscured by shadows or vegetation. This is not a traffic-safety or legal-access determination."
+    },
+    {
+      "osm_way_id": "1469007817",
+      "imagery_url": "https://gis.pbcgov.org/image/rest/services/Aerialphotgraphy_2026_WebMercator/ImageServer/exportImage?bbox=-8927985.89662373%2C3042409.296055702%2C-8927875.89662373%2C3042519.296055702&bboxSR=3857&imageSR=3857&size=700%2C700&format=jpg&f=image",
+      "geometry": [
+        [
+          -80.2009986,
+          26.3497555
+        ],
+        [
+          -80.2009693,
+          26.3497537
+        ],
+        [
+          -80.2009355,
+          26.3497513
+        ]
+      ],
+      "tags": {
+        "crossing": "unmarked",
+        "crossing:markings": "no",
+        "crossing:signals": "no",
+        "footway": "crossing",
+        "highway": "footway"
+      },
+      "observation": "Sidewalk approaches are visible at the side-street entrance. No continuous painted pedestrian crossing is apparent; portions are obscured by shadows or vegetation. This is not a traffic-safety or legal-access determination."
+    },
+    {
+      "osm_way_id": "1152246867",
+      "imagery_url": "https://gis.pbcgov.org/image/rest/services/Aerialphotgraphy_2026_WebMercator/ImageServer/exportImage?bbox=-8927594.057582112%2C3042390.7925375993%2C-8927484.057582112%2C3042500.7925375993&bboxSR=3857&imageSR=3857&size=700%2C700&format=jpg&f=image",
+      "geometry": [
+        [
+          -80.197589,
+          26.3496099
+        ],
+        [
+          -80.1974865,
+          26.3495965
+        ],
+        [
+          -80.1973973,
+          26.3495878
+        ],
+        [
+          -80.1973186,
+          26.349624
+        ]
+      ],
+      "tags": {
+        "crossing": "unmarked",
+        "crossing:markings": "no",
+        "footway": "crossing",
+        "highway": "footway"
+      },
+      "observation": "Sidewalk approaches are visible at the side-street entrance. No continuous painted pedestrian crossing is apparent; portions are obscured by shadows or vegetation. This is not a traffic-safety or legal-access determination."
+    },
+    {
+      "osm_way_id": "1152246875",
+      "imagery_url": "https://gis.pbcgov.org/image/rest/services/Aerialphotgraphy_2026_WebMercator/ImageServer/exportImage?bbox=-8927406.512069998%2C3042391.8174045454%2C-8927296.512069998%2C3042501.8174045454&bboxSR=3857&imageSR=3857&size=700%2C700&format=jpg&f=image",
+      "geometry": [
+        [
+          -80.1956364,
+          26.3496353
+        ],
+        [
+          -80.1957175,
+          26.3496125
+        ],
+        [
+          -80.1958059,
+          26.3495994
+        ],
+        [
+          -80.1958926,
+          26.349604
+        ]
+      ],
+      "tags": {
+        "crossing": "unmarked",
+        "crossing:markings": "no",
+        "footway": "crossing",
+        "highway": "footway"
+      },
+      "observation": "Sidewalk approaches are visible at the side-street entrance. No continuous painted pedestrian crossing is apparent; portions are obscured by shadows or vegetation. This is not a traffic-safety or legal-access determination."
+    }
+  ]
+}

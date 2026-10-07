@@ -113,7 +113,8 @@ def _route(edges, speed):
         # Keep whole original source segments available for disclosure.
         segments.append(dict(id=edge['id'], kind=edge['kind'], name=edge.get('name') or edge['kind'].title(),
                              distance_m=edge['length_m'], geometry=edge.get('geometry', []),
-                             source=edge.get('source', ''), source_date=edge.get('source_date', 'Unknown')))
+                             source=edge.get('source', ''), source_date=edge.get('source_date', 'Unknown'),
+                             crossing_option=edge.get('crossing_option'), approval_required=edge.get('approval_required',False)))
     return dict(distance_m=distance, street_distance_m=street, duration_seconds=distance/speed,
                 crossings=sum(e['kind'] == 'crossing' for e in edges), segments=segments)
 
