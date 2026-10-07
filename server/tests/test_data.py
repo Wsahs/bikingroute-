@@ -29,6 +29,21 @@ class DataTests(unittest.TestCase):
         self.assertFalse(eligible(result['edges'][0]))
         self.assertEqual(result['metadata']['audit']['roads_with_unseparated_sidewalks'],1)
 
+    def test_documented_curb_ramps_do_not_disconnect_paths(self):
+        for kerb in ('lowered', 'flush', 'no'):
+            with self.subTest(kerb=kerb):
+                result=convert(document(node_tags={'barrier':'kerb','kerb':kerb}))
+                self.assertTrue(any(eligible(e) for e in result['edges']))
+
+    def test_curb_ramp_does_not_override_explicit_restriction(self):
+        result=convert(document(node_tags={'barrier':'kerb','kerb':'lowered','bicycle':'no'}))
+        self.assertFalse(any(eligible(e) for e in result['edges']))
+
+    def test_unknown_or_raised_curb_remains_unresolved(self):
+        for kerb in ('raised', 'yes', None):
+            result=convert(document(node_tags={'barrier':'kerb','kerb':kerb}))
+            self.assertFalse(any(eligible(e) for e in result['edges']))
+
     def test_barrier_node_blocks_even_if_way_allows_bicycles(self):
         result=convert(document(node_tags={'barrier':'gate'}))
         self.assertEqual(len(result['edges']),2)

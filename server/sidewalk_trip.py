@@ -1,6 +1,7 @@
 """Find a mapped trip without inventing address-to-network connections."""
 import math
 from server.access import access_points
+from server.path_access import with_path_access
 from server.routing import eligible, Network, plan
 
 def coordinates(value):
@@ -12,6 +13,7 @@ def coordinates(value):
 
 def trip(graph,origin,destination):
  origin=coordinates(origin);destination=coordinates(destination)
+ graph=with_path_access(graph,[origin,destination])
  result={'status':'coverage_gap','primary':None,'alternative':None,'requires_confirmation':False,'door_to_door_verified':False,'search_radius_m':500,'warnings':['Address-to-path connections are unverified. Distances and times cover only the mapped path.']}
  starts=access_points(graph,eligible,origin['lat'],origin['lng'])
  ends=access_points(graph,eligible,destination['lat'],destination['lng'])

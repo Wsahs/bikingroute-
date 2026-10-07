@@ -1,0 +1,489 @@
+{
+  "sidewalk_ways": 66,
+  "marked_crossing_ways": 3,
+  "records": [
+    {
+      "osm_way_id": 48848971,
+      "county_ids": [
+        9
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 48848987,
+      "county_ids": [
+        10
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 48850437,
+      "county_ids": [
+        14
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 48853596,
+      "county_ids": [
+        16
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 48853602,
+      "county_ids": [
+        17
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 48853605,
+      "county_ids": [
+        18
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 48922595,
+      "county_ids": [
+        21
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 49616477,
+      "county_ids": [
+        40
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 67123177,
+      "county_ids": [
+        48
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 67123178,
+      "county_ids": [
+        49
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 159697451,
+      "county_ids": [
+        75
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 184073156,
+      "county_ids": [
+        92
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 340091108,
+      "county_ids": [
+        504
+      ],
+      "classification": "marked_crossing_ways"
+    },
+    {
+      "osm_way_id": 356861441,
+      "county_ids": [
+        660
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 356861443,
+      "county_ids": [
+        662
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 356862184,
+      "county_ids": [
+        666
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 376498635,
+      "county_ids": [
+        983
+      ],
+      "classification": "marked_crossing_ways"
+    },
+    {
+      "osm_way_id": 397996593,
+      "county_ids": [
+        1022
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 418039084,
+      "county_ids": [
+        1054
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 435657067,
+      "county_ids": [
+        1059
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 435657069,
+      "county_ids": [
+        1060
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 482121107,
+      "county_ids": [
+        1223
+      ],
+      "classification": "marked_crossing_ways"
+    },
+    {
+      "osm_way_id": 485633061,
+      "county_ids": [
+        1245
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 614341656,
+      "county_ids": [
+        1811
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 614889552,
+      "county_ids": [
+        1820
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 906369420,
+      "county_ids": [
+        2779
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 951495355,
+      "county_ids": [
+        2882
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 993181569,
+      "county_ids": [
+        3218
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1021478963,
+      "county_ids": [
+        3442
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1152235804,
+      "county_ids": [
+        16600
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1152235912,
+      "county_ids": [
+        16681
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1152241945,
+      "county_ids": [
+        16765
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1152241963,
+      "county_ids": [
+        16781
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1152521354,
+      "county_ids": [
+        17510
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1153001274,
+      "county_ids": [
+        19590
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1153001306,
+      "county_ids": [
+        19617
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1153048517,
+      "county_ids": [
+        19630
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 160482449,
+      "county_ids": [
+        80
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 329955991,
+      "county_ids": [
+        51622
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 329956008,
+      "county_ids": [
+        51625
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 330035838,
+      "county_ids": [
+        51629
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 330035840,
+      "county_ids": [
+        51630
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 330035841,
+      "county_ids": [
+        51631
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 330035845,
+      "county_ids": [
+        51634
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 330211628,
+      "county_ids": [
+        51638
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 330211630,
+      "county_ids": [
+        51639
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 330211637,
+      "county_ids": [
+        51640
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 330211659,
+      "county_ids": [
+        51643
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 330211667,
+      "county_ids": [
+        51644
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 337013779,
+      "county_ids": [
+        51653
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 470869313,
+      "county_ids": [
+        51708
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 470869314,
+      "county_ids": [
+        51709
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 470869317,
+      "county_ids": [
+        51712
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 470869318,
+      "county_ids": [
+        51713
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 470875025,
+      "county_ids": [
+        51714
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 601147293,
+      "county_ids": [
+        51738
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 813729771,
+      "county_ids": [
+        51793
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 813729772,
+      "county_ids": [
+        51794
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 813729773,
+      "county_ids": [
+        51795
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1151634410,
+      "county_ids": [
+        15986
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1151638852,
+      "county_ids": [
+        16063
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1151994676,
+      "county_ids": [
+        16288
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1152016065,
+      "county_ids": [
+        16447
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1152016072,
+      "county_ids": [
+        16452
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1272433504,
+      "county_ids": [
+        52451
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1342181592,
+      "county_ids": [
+        52467
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1342181594,
+      "county_ids": [
+        52469
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1360080048,
+      "county_ids": [
+        52470
+      ],
+      "classification": "sidewalk_ways"
+    },
+    {
+      "osm_way_id": 1426995557,
+      "county_ids": [
+        52506
+      ],
+      "classification": "sidewalk_ways"
+    }
+  ]
+}

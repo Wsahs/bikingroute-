@@ -1,13 +1,19 @@
 {
-  "generated_at": "2026-10-01T16:30:23.426252+00:00",
+  "generated_at": "2026-10-07T03:54:03.426787+00:00",
   "imported_highway_ways": 34299,
   "inventory_records": 34299,
   "counts": {
     "road_review": 22956,
-    "access_review": 2573,
-    "routable_mapped": 7316,
-    "crossing_review": 1454,
-    "driveway_continuations": 932
+    "routable_mapped": 7488,
+    "access_review": 2447,
+    "crossing_review": 1408,
+    "driveway_continuations": 934
+  },
+  "ways_by_exclusion_reason": {
+    "street_quietness_unverified": 22956,
+    "way_access_unresolved_or_restricted": 25421,
+    "node_barrier_or_access_restriction": 1303,
+    "crossing_not_designated": 1314
   },
   "individually_reviewed_crossings": [
     "1151660139",

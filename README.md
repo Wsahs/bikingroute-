@@ -79,3 +79,11 @@ Both Google maps now handle trackpad Ctrl+wheel pinch and WebKit gesture events
 inside the map. Ordinary gestures remain handled by Google; page zoom outside
 the map remains available. Automated gesture tests run with
 `node --test web/tests/*.test.cjs`. Physical trackpad/iPhone testing is still needed.
+
+### Boca connectivity audit (October 6)
+
+`python -m server.rebuild_boca` now supplements missing OSM sidewalk/crossing classifications only when a county feature shares the OSM way ID and its geometry agrees in both directions, sampled every metre. Explicit restrictions and explicit unmarked crossings remain excluded. Evidence and county object IDs are retained in `data/county-evidence-audit.json` and on imported edges. The current match found 66 sidewalk ways and 3 marked crossing ways.
+
+Documented lowered/flush/absent curbs no longer behave like locked gates. Unknown curbs, gates and explicit bicycle bans remain unresolved or blocked. Address lookup now considers temporary points on the interior of existing eligible map segments, preserving their direction, distance and topology. These points do not verify the approach from an address.
+
+`python -m server.audit_boca` inventories all 34,299 imported highway ways in the local review database, including exclusion reasons. This is a machine inventory, **not** a visual survey of every real sidewalk. The Boca area still contains missing geometry, unmarked crossings excluded by the strict policy, unknown barriers and unverified address approaches. Large detours remain possible. The county layer and raw OSM download are retained locally; private test addresses are not committed.

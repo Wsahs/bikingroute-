@@ -104,7 +104,9 @@ def convert(document, name='Boca Raton pilot', bounds=None, sidewalk_policy=None
             node_blocked=False
             for node in (na,nb):
                 nt=node.get('tags',{})
-                if blocked(nt) or (nt.get('barrier') and nt.get('bicycle') not in ('yes','designated')):
+                # A documented curb ramp is traversable geometry, not an access ban.
+                ramp = nt.get('barrier') == 'kerb' and nt.get('kerb') in ('lowered', 'flush', 'no')
+                if blocked(nt) or (nt.get('barrier') and not ramp and nt.get('bicycle') not in ('yes','designated')):
                     node_blocked=True
             directions = [(a,b)] if oneway in ('yes','1','true') else [(b,a)] if oneway=='-1' else [(a,b),(b,a)]
             for src,dst in directions:
@@ -114,6 +116,13 @@ def convert(document, name='Boca Raton pilot', bounds=None, sidewalk_policy=None
                     designated=bool(designation),crossing_type='driveway' if driveway else 'marked' if designation else 'unverified',name='Sidewalk across driveway' if driveway else tags.get('name',kind.title()),
                     geometry=[[raw_nodes[src]['lon'],raw_nodes[src]['lat']],[raw_nodes[dst]['lon'],raw_nodes[dst]['lat']]],
                     source='OpenStreetMap way '+str(way['id']),source_date=source_date,permission_basis=basis or 'Explicit OSM bicycle access')
+                reasons=[]
+                if not permission:reasons.append('way_access_unresolved_or_restricted')
+                if node_blocked:reasons.append('node_barrier_or_access_restriction')
+                if kind=='crossing' and not designation:reasons.append('crossing_not_designated')
+                if kind=='street':reasons.append('street_quietness_unverified')
+                edge['exclusion_reasons']=reasons
+                if way.get('county_evidence'):edge['county_evidence']=way['county_evidence']
                 edges.append(edge)
                 audit['eligible_directed_segments' if eligible(edge) else 'excluded_directed_segments'] += 1
     return dict(nodes=nodes,edges=edges,metadata=dict(name=name,coverage_complete=False,demo=False,
