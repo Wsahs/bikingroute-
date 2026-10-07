@@ -1,26 +1,26 @@
 {
   "source": "https://pbcmaps.pbcgov.org/arcgis/rest/services/Ags/2/MapServer/15",
   "requested_bbox_wsen": [
-    -80.2,
+    -80.245,
     26.32,
     -80.055,
     26.43
   ],
   "retrieved_at": "2026-09-30T22:27:15.909188+00:00",
-  "feature_count": 137951,
+  "feature_count": 139638,
   "all_advertised_ids_downloaded": true,
   "coverage_complete": false,
   "routing_verified": false,
   "source_editing_info": null,
   "source_attribution": "",
-  "sha256": "49f906cff9349e8dc5e606e9534cf01d03d1697f974dc46bd9778fad1a87a7f9",
+  "sha256": "a443115b1af406bf3d78856a62bb1f4a8eb6e69688afa60dd43cfdb8ed2a98c7",
   "file": "pbc-sidewalks.geojson",
   "category_counts": {
     "TYPE": {
       "DRIVEWAY": 62441,
       "SIDEWALK": 57570,
-      "ASPHALT": 326,
-      "CONCRETE": 17603,
+      "ASPHALT": 653,
+      "CONCRETE": 18963,
       "CURBED DRIVEWAY": 11
     }
   },
@@ -28,11 +28,20 @@
     "Full layer download is not proof of complete real-world coverage.",
     "Existing/proposed status must be checked before routing.",
     "Independent GIS lines do not establish connected sidewalk topology or bicycle permission.",
-    "Reuse terms and currency must be reviewed before production distribution."
+    "Reuse terms and currency must be reviewed before production distribution.",
+    "Expansion checks all current source IDs but retains existing feature versions; it is not a refresh of their attributes or geometry."
   ],
   "geometry_types": {
     "LineString": 137951
   },
   "missing_geometry": 0,
-  "validation": "IDs unique; expected count, checksum and longitude/latitude verified"
+  "validation": "IDs unique; expected count, checksum and longitude/latitude verified",
+  "inventory_checked_at": "2026-10-07T19:46:50.888068+00:00",
+  "expansion": {
+    "new_records": 1687,
+    "new_records_retrieved_at": "2026-10-07T19:46:50.888068+00:00",
+    "retained_records": 137951,
+    "retained_records_retrieved_at": "2026-09-30T22:27:15.909188+00:00",
+    "existing_features_refetched": false
+  }
 }

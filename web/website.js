@@ -4,13 +4,14 @@ const sidewalkMode=document.body.dataset.planner==='sidewalk';
 let map,routeLines=[],pins=[],routes=[],routeRevision=0,mapReady=false;
 const places={start:null,end:null};
 let crossingDecisions={};
+let sidewalkEvidenceLayer,evidenceRevision=0;
 const searchRevisions={start:0,end:0};
 const inputTimers={};
 const searchSessions={start:crypto.randomUUID(),end:crypto.randomUUID()};
 function status(text,error=false){$('status').textContent=text;$('status').classList.toggle('error',error);}
 async function api(path,payload,signal){const response=await fetch(path,{method:payload?'POST':'GET',headers:payload?{'Content-Type':'application/json'}:{},body:payload?JSON.stringify(payload):undefined,signal});const data=await response.json();if(!response.ok)throw new Error(data.error||'Could not complete the request.');return data;}
 function updateButton(){ $('find').disabled=!(mapReady&&places.start&&places.end); }
-function resetRoute(keepCrossings=false){if(!keepCrossings)crossingDecisions={};routeRevision++;routes=[];routeLines.forEach(line=>line.setMap(null));routeLines=[];$('route-options').replaceChildren();$('route-details').hidden=true;document.getElementById('coverage-card')?.remove();updateButton();}
+function resetRoute(keepCrossings=false){evidenceRevision++;if(sidewalkEvidenceLayer)sidewalkEvidenceLayer.setMap(null);if(!keepCrossings)crossingDecisions={};routeRevision++;routes=[];routeLines.forEach(line=>line.setMap(null));routeLines=[];$('route-options').replaceChildren();$('route-details').hidden=true;document.getElementById('coverage-card')?.remove();updateButton();}
 function updatePins(){pins.forEach(pin=>pin.setMap(null));pins=[];if(!map)return;for(const [key,label] of [['start','A'],['end','B']])if(places[key])pins.push(new google.maps.Marker({map,position:places[key].location,label:{text:label,color:'#fff',fontWeight:'700'},icon:{path:google.maps.SymbolPath.CIRCLE,scale:13,fillColor:key==='start'?'#204f3b':'#769d43',fillOpacity:1,strokeColor:'#fff',strokeWeight:3}}));}
 function closeResults(key){$(key+'-results').hidden=true;$(key).setAttribute('aria-expanded','false');}
 async function choose(key,prediction){
@@ -56,11 +57,13 @@ async function findSidewalkRoute(revision){
  if(revision!==routeRevision)return;
  const card=document.createElement('div');card.id='coverage-card';card.className='coverage-card';
  const heading=document.createElement('strong'),note=document.createElement('p');card.append(heading,note);$('route-options').before(card);
+ addSidewalkEvidenceControls(card);
  if(!result.primary&&!result.alternative&&!result.crossing_proposal){heading.textContent='We cannot verify this trip yet';note.textContent=result.message||'Sidewalk coverage is incomplete here. This does not prove there is no sidewalk route.';const back=document.createElement('a');back.href='/';back.textContent='Use the Google cycling planner →';card.append(back);status('No complete mapped connection found. Your selected addresses are kept.');return;}
  heading.textContent='Mapped path — address connections unverified';
  function describeApproaches(approaches){note.textContent='Start: '+Math.round(approaches.origin.distance_m)+' m from the mapped path. Destination: '+Math.round(approaches.destination.distance_m)+' m from the mapped path. These are straight-line distances, not verified riding connections. They are excluded from the time and distance below.';}
  describeApproaches(result.approaches||result.proposal_approaches);
  const legend=document.createElement('p');legend.textContent='Route data: OpenStreetMap and Palm Beach County. Green: mapped route. Red: street riding or unmarked crossings; a preview is not an approved route. Map pins mark your addresses; the route line may stop before them.';card.append(legend);
+
  function show(route,label){routes=[mappedRoute(route,result)];$('route-options').replaceChildren();const button=document.createElement('button');button.className='route-option';button.type='button';button.textContent=minutes(routes[0])+' min · '+miles(route.distance_m)+' · '+label;button.onclick=()=>selectRoute(0);$('route-options').append(button);selectRoute(0);}
  if(result.primary)show(result.primary,result.primary.segments.some(s=>s.crossing_option)?'Includes approved unmarked crossings':'Mapped sidewalks & trails');
  if(result.crossing_proposal){
@@ -89,4 +92,14 @@ async function findSidewalkRoute(revision){
   accept.className=decline.className='street-choice';accept.textContent='Yes — show this street alternative';decline.textContent='No — keep streets out';
   accept.onclick=()=>{show(result.alternative,'Includes street riding');panel.remove();};decline.onclick=()=>{panel.remove();if(!result.primary)status('Street alternative declined. We cannot verify a sidewalk-only route for this trip yet.');};panel.append(copy,accept,decline);card.append(panel);
  }
+}
+
+function addSidewalkEvidenceControls(card){
+ const evidenceNote=document.createElement('p');evidenceNote.textContent='Missing address connection? Inspect the county’s mapped sidewalks nearby. These outlines are evidence, not directions.';card.append(evidenceNote);
+ for(const [key,label] of [['start','starting point'],['end','destination']]){
+  const inspect=document.createElement('button');inspect.type='button';inspect.className='street-choice';inspect.textContent='Show sidewalks near '+label;
+  inspect.onclick=async()=>{const revision=++evidenceRevision;inspect.disabled=true;try{const p=places[key].location;const data=await api('/api/sidewalk-evidence?'+new URLSearchParams({lat:p.lat,lon:p.lng}));if(revision!==evidenceRevision)return;if(sidewalkEvidenceLayer)sidewalkEvidenceLayer.setMap(null);sidewalkEvidenceLayer=new google.maps.Data({map});sidewalkEvidenceLayer.addGeoJson(data);sidewalkEvidenceLayer.setStyle({strokeColor:'#bc790d',strokeWeight:3,strokeOpacity:.8,clickable:false,zIndex:1});map.setCenter(p);map.setZoom(18);status(data.features.length?data.notice+(data.truncated?' Only part of the available evidence is displayed.':''):'No sidewalk evidence was returned here. This does not prove sidewalks are absent.');}catch(error){if(revision===evidenceRevision)status(error.message,true);}finally{inspect.disabled=false;}};card.append(inspect);
+ }
+ const hideEvidence=document.createElement('button');hideEvidence.type='button';hideEvidence.className='street-choice';hideEvidence.textContent='Hide county sidewalk outlines';hideEvidence.onclick=()=>{evidenceRevision++;if(sidewalkEvidenceLayer)sidewalkEvidenceLayer.setMap(null);status('County sidewalk outlines hidden.');};card.append(hideEvidence);
+
 }

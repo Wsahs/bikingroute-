@@ -28,3 +28,16 @@ def nearby(database,lat,lon):
   rows=db.execute("SELECT e.source,e.category,e.geometry FROM evidence e JOIN evidence_bounds b ON e.id=b.id WHERE b.maxx>=? AND b.minx<=? AND b.maxy>=? AND b.miny<=? AND e.category IN ('Sidewalk','Pathway','Shared Use Path','Existing Sidewalk','SIDEWALK') LIMIT 1200",(lon-.008,lon+.008,lat-.006,lat+.006)).fetchall()
  return {'type':'FeatureCollection','features':[{'type':'Feature','properties':{'source':s,'category':c,'routing_verified':False},'geometry':json.loads(g)} for s,c,g in rows],'notice':'County sidewalk evidence; connectivity and bicycle access are not verified. These lines are not directions.'}
 if __name__=='__main__':build('data/sources','data/evidence.sqlite')
+
+def around_address(database,lat,lon):
+ """Return a small, explicitly incomplete evidence view around an address."""
+ import math
+ if not math.isfinite(lat) or not math.isfinite(lon) or not -90<=lat<=90 or not -180<=lon<=180:raise ValueError('Invalid coordinates')
+ result={'type':'FeatureCollection','features':[],'routing_verified':False,'truncated':False,'notice':'Amber lines are county sidewalk evidence, not verified riding directions.'}
+ if not Path(database).exists():return result
+ dy=200/111320;dx=200/(111320*max(.01,math.cos(math.radians(lat))))
+ with sqlite3.connect(str(database)) as db:
+  rows=db.execute("SELECT e.source,e.category,e.geometry FROM evidence e JOIN evidence_bounds b ON e.id=b.id WHERE b.maxx>=? AND b.minx<=? AND b.maxy>=? AND b.miny<=? AND e.category IN ('Sidewalk','Pathway','Shared Use Path','Existing Sidewalk','SIDEWALK') ORDER BY e.id LIMIT 2001",(lon-dx,lon+dx,lat-dy,lat+dy)).fetchall()
+ result['truncated']=len(rows)>2000
+ result['features']=[{'type':'Feature','properties':{'source':s,'category':c,'routing_verified':False},'geometry':json.loads(g)} for s,c,g in rows[:2000]]
+ return result

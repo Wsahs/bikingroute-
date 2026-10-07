@@ -5,7 +5,7 @@ from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from server.routing import plan,eligible,SearchLimitError
 from server.import_osm import meters
 from server.addresses import AddressIndex
-from server.evidence import nearby
+from server.evidence import nearby,around_address
 from server.access import access_points
 from server.directions import RoadNames,directions
 ROOT=Path(__file__).resolve().parents[1]
@@ -47,6 +47,8 @@ class Application:
     if dataset not in ('boca','hollywood'):raise ValueError('Unknown dataset')
     database=(self.data_dir or ROOT/'data')/'addresses.sqlite'
     return 200,{'results':AddressIndex(database).search(q.get('q',[''])[0],dataset) if database.exists() else [],'source':'Local county address records'}
+   if path=='/api/sidewalk-evidence' and method=='GET':
+    return 200,around_address((self.data_dir or ROOT/'data')/'evidence.sqlite',float(q.get('lat',[''])[0]),float(q.get('lon',[''])[0]))
    g=self.load(dataset)
    mode=(payload or {}).get('mode',q.get('mode',['sidewalk'])[0])
    if mode not in ('sidewalk','bicycle'):raise ValueError('Unknown mode')
